@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdrion <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 15:07:47 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/04 16:19:33 by pdrion           ###   ########.fr       */
+/*   Created: 2019/11/04 16:30:29 by pdrion            #+#    #+#             */
+/*   Updated: 2019/11/05 21:55:55 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void *ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned int	i;
-	char			*d;
-	const char		*s;
-
-	d = dst;
-	s = src;
+	size_t		i;
+	char		*d;
+	char		*s;
+	
 	i = 0;
-	while (i < n && s[i] != '\0')
+	d = dst;
+	s = (char *)src;
+	while (i < n && (i == 0 || s[i - 1] != c))
 	{
 		d[i] = s[i];
 		i++;
 	}
-	if (i != n)
-		d[i] = '\0';
-	return (dst);
+	if (i > 0 && s[i - 1] == c)
+		return (d + i);
+	else
+		return (NULL);
 }

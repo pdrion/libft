@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdrion <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 14:45:44 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/04 14:49:53 by pdrion           ###   ########.fr       */
+/*   Created: 2019/11/06 01:47:10 by pdrion            #+#    #+#             */
+/*   Updated: 2019/11/06 01:47:16 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, size_t len)
+int ft_isprint(int c)
 {
-	int				i;
-	unsigned char	*uc;
+	unsigned char uc;
 
-	i = 0;
-	uc = b;
-	while (i < len)
-		*(uc + i++) = (unsigned char)c;
-	return (b);
+	uc = (unsigned char)c;
+	if(uc >= 32 && uc <= 126)
+		return (1);
+	else
+		return (0);
 }

@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdrion <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 16:30:29 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/04 17:21:59 by pdrion           ###   ########.fr       */
+/*   Created: 2019/11/06 01:12:24 by pdrion            #+#    #+#             */
+/*   Updated: 2019/11/06 01:20:32 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+int ft_isalpha(int c)
 {
-	unsigned char	uc;
-	char			*d;
-	const char		*s;
-	int				i;
+	unsigned char uc;
 
-	i = 0;
-	d = dst;
-	s = src;
 	uc = (unsigned char)c;
-	printf("%c\n", uc);
-	while(i < n && s[i] != uc && s[i] != '\0')
+	if((uc >= 'A' && uc <= 'Z') || (uc >= 'a' && uc <='z'))
+		return (1);
+	else
+		return (0);
+}
+
+int main (int argc, char **argv)
+{
+	if (argc > 1)
 	{
-		d[i] = s[i];
-		i++;
+		printf("la vraie fonction ; %d\n",isalpha(atoi(argv[1])));
+		printf("ma fonction       ; %d\n",ft_isalpha(atoi(argv[1])));
 	}
-	if (s[i] == uc)
-		d[i] = s[i];
-	else if (s[i] == '\0' && i != n + 1)
-		d[i] = '\0';
-	return (dst);
+	return (0);
 }

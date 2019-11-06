@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdrion <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 15:07:47 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/04 16:19:02 by pdrion           ###   ########.fr       */
+/*   Created: 2019/11/06 03:10:30 by pdrion            #+#    #+#             */
+/*   Updated: 2019/11/06 03:10:37 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
-	char			*d;
-	const char		*s;
+	unsigned char	*c1;
+	unsigned char	*c2;
+	size_t				i;
 
-	d = dst;
-	s = src;
+	c1 = (unsigned char *)s1;
+	c2 = (unsigned char *)s2;
 	i = 0;
-	while (i < n && s[i] != '\0')
+	while(i < n && c1[i] != '\0' && c2[i] != '\0')
 	{
-		d[i] = s[i];
-		i++;
+		if (c1[i] != c2[i])
+			return(c1[i] - c2[i]);
+	i++;
 	}
-	if (i != n)
-		d[i]= '\0';
-	return (dst);
+	return (c1[i] - c2[i]);
 }

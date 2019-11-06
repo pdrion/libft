@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdrion <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 14:53:53 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/04 16:23:14 by pdrion           ###   ########.fr       */
+/*   Created: 2019/11/06 01:21:01 by pdrion            #+#    #+#             */
+/*   Updated: 2019/11/06 01:21:02 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, size_t n)
+int ft_isalpha(int c)
 {
-	int		i;
-	char	*c;
+	unsigned char uc;
 
-	c = s;
-	i = 0;
-	while (i < n)
-	{
-		*(c + i) = '\0';
-		i++;
-	}
+	uc = (unsigned char)c;
+	if((uc >= 'A' && uc <= 'Z') || (uc >= 'a' && uc <='z'))
+		return (1);
+	else
+		return (0);
 }

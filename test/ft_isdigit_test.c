@@ -1,48 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdrion <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 15:07:47 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/04 16:17:48 by pdrion           ###   ########.fr       */
+/*   Created: 2019/11/06 01:23:40 by pdrion            #+#    #+#             */
+/*   Updated: 2019/11/06 01:23:43 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
-
-void *ft_memcpy(void *dst, const void *src, size_t n)
+#include <ctype.h>
+int ft_isdigit(int c)
 {
-	unsigned int i;
-	char *d;
-	const char *s;
+	unsigned char uc;
 
-	d = dst;
-	s = src;
-	i = 0;
-	while (i < n && s[i] != '\0')
-	{
-		d[i] = s[i];
-		i++;
-	}
-	if (i != n)
-		d[i]= '\0';
-	return(dst);
+	uc = (unsigned char)c;
+	if(uc >= '0' && uc <= '9')
+		return (1);
+	else
+		return (0);
 }
 
-
-
-int main(int argc, char **argv)
+int main (int argc, char **argv)
 {
-	if(argc >1)
+	if (argc > 1)
 	{
-		printf("%s\n", argv[1]);
-//		memcpy(argv[1],argv[2],atoi(argv[3]));
-		ft_memcpy(argv[1],argv[2],atoi(argv[3]));
-		printf("%s\n", argv[1]);
+		printf("la vraie fonction ; %d\n",isdigit(atoi(argv[1])));
+		printf("ma fonction       ; %d\n",ft_isdigit(atoi(argv[1])));
 	}
 	return (0);
 }

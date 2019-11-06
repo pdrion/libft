@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdrion <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 14:03:12 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/04 14:44:23 by pdrion           ###   ########.fr       */
+/*   Created: 2019/11/06 00:32:11 by pdrion            #+#    #+#             */
+/*   Updated: 2019/11/06 00:32:15 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-int main(int argc, char **argv)
-{
-	if (argc > 1)
-	{
-		char arr[] = "testdememset";
-		int c;
-		int len;
-		int i;
-		
-		i = 0;
-		c = atoi(argv[1]);
-		len = 20;
-		memset(arr, c, len);
-//		while (arr[i] != "\0")
-			printf("%s", arr);
-	}
-	return (0);
 
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	unsigned char	uc;
+	char			*src;
+	
+	uc = c;
+	src = (char *)s;
+	while(n-- && src != 0)
+	{
+		if (*src == uc)
+			return(src);
+		src++;
+	}
+	return (NULL);
 }

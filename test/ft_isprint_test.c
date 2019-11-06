@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_isprint_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdrion <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 14:45:44 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/04 14:48:28 by pdrion           ###   ########.fr       */
+/*   Created: 2019/11/06 01:39:45 by pdrion            #+#    #+#             */
+/*   Updated: 2019/11/06 01:44:30 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, size_t len)
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+int ft_isprint(int c)
 {
-	int 			i;
-	unsigned char	*uc;
+	unsigned char uc;
 
-	i = 0;
-	uc = b;
-	while (i < len)
-		*(uc + i++) = (unsigned char)c;
-	return (b);
+	uc = (unsigned char)c;
+	if(uc >= 32 && uc <= 126)
+		return (1);
+	else
+		return (0);
+}
+
+int main (int argc, char **argv)
+{
+	if (argc > 1)
+	{
+		printf("la vraie fonction ; %d\n",isprint(atoi(argv[1])));
+		printf("ma fonction       ; %d\n",ft_isprint(atoi(argv[1])));
+	}
+	return (0);
 }

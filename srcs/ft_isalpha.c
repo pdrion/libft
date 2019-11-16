@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdrion <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 16:30:29 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/05 21:55:55 by pdrion           ###   ########.fr       */
+/*   Created: 2019/11/06 01:21:01 by pdrion            #+#    #+#             */
+/*   Updated: 2019/11/15 16:22:48 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memccpy(void *dst, const void *src, int c, size_t n)
+int ft_isalpha(int c)
 {
-	size_t		i;
-	char		*d;
-	char		*s;
-	
-	i = 0;
-	d = dst;
-	s = (char *)src;
-	while (i < n && (i == 0 || s[i - 1] != c))
-	{
-		d[i] = s[i];
-		i++;
-	}
-	if (i > 0 && s[i - 1] == c)
-		return (d + i);
+	if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <='z'))
+		return (1);
 	else
-		return (NULL);
+		return (0);
 }

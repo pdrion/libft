@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdrion <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 23:50:29 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/05 23:50:40 by pdrion           ###   ########.fr       */
+/*   Created: 2019/11/15 21:26:04 by pdrion            #+#    #+#             */
+/*   Updated: 2019/11/15 22:48:30 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memmove(void *dst, const void *src, size_t n)
+#include "libft.h"
+
+size_t  ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t		i;
-	char		*d;
-	char		*s;
-	
-	i = 0;
-	d = dst;
-	s = (char *)src;
-	if (d[n - 1] && n != 0)
-	{
-		while (i < n)
-		{
-			*d++ = s[i];
-			i++;
-		}
-	}
-	else if (n != 0)
-	{
-		while (*d != 0)
-			*d++ = s[i++];
-		i = 0;
-		while (s[i])
-			*++d = s[i++];
-	}
-	return (dst);
+	size_t size_src;
+	size_t size_new;
+
+	size_src = ft_strlen(src);
+	size_new = 0;
+	if (dstsize == 0)
+		return (size_src);
+	if (size_src >= dstsize)
+		size_new = dstsize - 1;
+	else
+		size_new = size_src;
+	ft_memcpy(dst, src, size_new);
+	dst[size_new] = '\0';
+	return (size_src);
 }

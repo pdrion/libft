@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdrion <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 15:07:47 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/05 22:11:29 by pdrion           ###   ########.fr       */
+/*   Created: 2019/11/05 23:50:29 by pdrion            #+#    #+#             */
+/*   Updated: 2019/11/15 21:08:21 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	char			*d;
-	const char		*s;
+#include "libft.h"
 
+void	*ft_memmove(void *dst, const void *src, size_t n)
+{
+	size_t	i;
+	char	*d;
+	char	*s;
+	char	*lasts;
+	char	*lastd;
+
+	i = 0;
 	d = dst;
-	s = src;
-	while (n--)
+	s = (char *)src;
+	if (d == NULL && s == NULL)
+		return (NULL);
+	if (d < s)
 	{
-		*d++ = *s++;
+		while (n--)
+			*d++ = *s++;
+	}
+	else
+	{
+		lasts = s + (n - 1);
+		lastd = d + (n - 1);
+		while (n--)
+			*lastd-- = *lasts--;
 	}
 	return (dst);
 }

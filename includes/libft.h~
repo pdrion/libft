@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdrion <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 00:32:11 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/06 00:32:15 by pdrion           ###   ########.fr       */
+/*   Created: 2019/11/15 14:25:04 by pdrion            #+#    #+#             */
+/*   Updated: 2019/11/15 14:29:06 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memchr(const void *s, int c, size_t n)
-{
-	unsigned char	uc;
-	char			*src;
-	
-	uc = c;
-	src = (char *)s;
-	while(n-- && src != 0)
-	{
-		if (*src == uc)
-			return(src);
-		src++;
-	}
-	return (NULL);
-}
+#ifndef LIBFT_H
+# define LIBFT_H
+# include <stdlib.h>
+#endif

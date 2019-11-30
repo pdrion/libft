@@ -6,7 +6,7 @@
 /*   By: pdrion <pdrion@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 16:50:44 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/30 20:37:55 by pdrion           ###   ########.fr       */
+/*   Updated: 2019/11/30 22:39:28 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t		ft_strlcat(char *dest, const char *src, size_t size)
 	i = j;
 	while (src[j - i] && j + 1 < size)
 	{
-	  	dest[j] = src[j - i];
+		dest[j] = src[j - i];
 		j++;
 	}
 	if (i < size)

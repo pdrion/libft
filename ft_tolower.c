@@ -6,15 +6,15 @@
 /*   By: pdrion <pdrion@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 16:42:52 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/30 16:43:41 by pdrion           ###   ########.fr       */
+/*   Updated: 2019/11/30 22:53:51 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower(int c)
+int		ft_tolower(int c)
 {
-	if(c >= 'A' && c <= 'Z')
+	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
 	return (c);
 }

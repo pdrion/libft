@@ -6,7 +6,7 @@
 /*   By: pdrion <pdrion@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 18:19:25 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/30 18:52:30 by pdrion           ###   ########.fr       */
+/*   Updated: 2019/11/30 22:06:41 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 		{
 			tmp = *alst;
 			while (tmp->next != NULL)
-				tmp = tmp -> next;
-			tmp -> next = new;
+				tmp = tmp->next;
+			tmp->next = new;
 		}
 	}
 }

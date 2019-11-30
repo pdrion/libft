@@ -6,7 +6,7 @@
 /*   By: pdrion <pdrion@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 18:15:01 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/30 18:16:12 by pdrion           ###   ########.fr       */
+/*   Updated: 2019/11/30 22:07:23 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
 	if (*alst)
-		new -> next = *alst;
+		new->next = *alst;
 	*alst = new;
 }

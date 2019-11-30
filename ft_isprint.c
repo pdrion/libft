@@ -6,15 +6,15 @@
 /*   By: pdrion <pdrion@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 16:40:21 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/30 16:40:57 by pdrion           ###   ########.fr       */
+/*   Updated: 2019/11/30 21:57:35 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int		ft_isprint(int c)
 {
-	if(c >= 32 && c <= 126)
+	if (c >= 32 && c <= 126)
 		return (1);
 	else
 		return (0);

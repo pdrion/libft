@@ -6,17 +6,16 @@
 /*   By: pdrion <pdrion@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 18:11:30 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/30 19:05:35 by pdrion           ###   ########.fr       */
+/*   Updated: 2019/11/30 22:23:01 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-  if (!s)
-    return ;
-   while(*s)
-    ft_putchar_fd(*s++, fd);
-
+	if (!s)
+		return ;
+	while (*s)
+		ft_putchar_fd(*s++, fd);
 }

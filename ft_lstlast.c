@@ -6,7 +6,7 @@
 /*   By: pdrion <pdrion@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 18:18:08 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/30 18:18:53 by pdrion           ###   ########.fr       */
+/*   Updated: 2019/11/30 22:09:11 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list		*ft_lstlast(t_list *lst)
 	if (!lst)
 		return (0);
 	tmp = lst;
-	while (tmp -> next != NULL)
-		tmp = tmp -> next;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
 	return (tmp);
 }

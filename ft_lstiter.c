@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdrion <pdrion@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/30 18:11:30 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/30 19:05:35 by pdrion           ###   ########.fr       */
+/*   Created: 2019/11/30 18:37:23 by pdrion            #+#    #+#             */
+/*   Updated: 2019/11/30 18:58:24 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_lstiter(t_list *lst, void (*f)(void*))
 {
-  if (!s)
-    return ;
-   while(*s)
-    ft_putchar_fd(*s++, fd);
-
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

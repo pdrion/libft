@@ -6,7 +6,7 @@
 /*   By: pdrion <pdrion@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 16:51:36 by pdrion            #+#    #+#             */
-/*   Updated: 2019/11/30 16:52:53 by pdrion           ###   ########.fr       */
+/*   Updated: 2019/11/30 19:22:19 by pdrion           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,24 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*begin_needle;
-	char	*str;
-	size_t	i;
+  unsigned int cmp;
+  unsigned int i;
 
-	begin_needle = (char *)needle;
-	str = (char *)haystack;
-	i = 0;
-	if (*begin_needle == '\0')
-		return (str);
-	while (*str && i < len)
-	{
-		begin_needle = (char *)needle;
-		while (*begin_needle++ == *str++ && i++ < len)
-		{
-			if (i < len - 1 && *begin_needle == '\0')
-				return (str - (int)ft_strlen(needle));
-			else if (i == len -1 && *begin_needle == '\0' && *str == '\0')
-				return (str - (int)ft_strlen(needle));
-		}
-	}
-	return (NULL);
+  i = 0;
+  cmp = 0;
+  if (needle[cmp] == '\0')
+      return ((char *)haystack);
+
+   while (haystack[i] && len--)
+      {
+	cmp = 0;
+	while (haystack[i + cmp] != '\0' && haystack[i + cmp] == needle[cmp] && len + 1 - cmp)
+	  {
+	    if (needle[cmp + 1] == '\0')
+	      return ((char *)haystack + i);
+	    cmp++;
+	  }
+	i++;
+      }
+  return (NULL);
 }
